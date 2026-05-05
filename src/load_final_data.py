@@ -20,8 +20,8 @@ def load_fasta(file_path,label,min_len=10,max_len=50):
 
 
 def main():
-    plant_file = "../data/raw/plantAMPs_APD2024.fasta"
-    uniprot_file = "../data/raw/uniprot_mini.fasta"
+    plant_file = "../data/raw/naturalAMPs_APD2024a.fasta"
+    uniprot_file = "../data/raw/peptide_10_50_uniprot_no_toxin_antimicrobial_secreted.fasta"
 
     print("Loading AMP dataset...")
     amp_df = load_fasta(plant_file,label=1)
@@ -40,7 +40,13 @@ def main():
 
     amp_df = amp_df.sample(min_size, random_state=42)
     non_amp_df = non_amp_df.sample(min_size, random_state=42)
+    VALID_AA = set("ACDEFGHIKLMNPQRSTVWY")
 
+    def is_valid(seq):
+        return all(aa in VALID_AA for aa in seq)
+
+    amp_df = amp_df[amp_df["sequence"].apply(is_valid)]
+    non_amp_df = non_amp_df[non_amp_df["sequence"].apply(is_valid)]
     # Combine
     df = pd.concat([amp_df, non_amp_df], ignore_index=True)
 
@@ -48,15 +54,13 @@ def main():
     print(df["label"].value_counts())
     
     # save the dataset
-    output_path = "../data/processed/final_dataset.csv"
+    output_path = "../data/processed/final_dataset_v2.csv"
     df.to_csv(output_path, index=False)
 
     print("Dataset saved to:", output_path)
 
-    # -----------------------------
-    # BASIC STATS
-    # -----------------------------
-    print("\nLength statistics:")
+    # basic statistics
+    print("Length statistics:")
     print(df.groupby("label")["length"].describe())
 
 if __name__ == "__main__":
