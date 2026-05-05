@@ -1,7 +1,7 @@
 import pandas as pd
 from sklearn.model_selection import train_test_split
 from sklearn.ensemble import RandomForestClassifier
-from sklearn.metrics import classification_report, accuracy_score,confusion_matrix
+from sklearn.metrics import classification_report, accuracy_score,confusion_matrix,f1_score
 from sklearn.linear_model import LogisticRegression
 from sklearn.svm import SVC
 import itertools 
@@ -23,7 +23,6 @@ def compute_net_charge(sequence):
     charge_dict = {
         "K":1,"R":1,"H":0.1,"D":-1,"E":-1 # negative and positive animo acids get a score
     }
-
     charge=0
     for aa in sequence:
         charge += charge_dict.get(aa,0)
@@ -64,7 +63,7 @@ def compute_dipeptide(sequence):
 # tripeptides would help but .. 20^3 = 8000 features thats too much
 
 # load data
-df = pd.read_csv("../data/processed/final_dataset.csv")
+df = pd.read_csv("../data/processed/final_dataset_v2.csv")
 
 print("dataset loaded:",df.shape)
 
@@ -118,3 +117,4 @@ for name, model in models.items():
     print(classification_report(y_test,y_pred))
     print(f"accuracy : {accuracy_score(y_test,y_pred)}")
     print(f"confussion matrix: \n{confusion_matrix(y_test,y_pred)}")
+    print(f"f1 score: {f1_score(y_test,y_pred)}")
