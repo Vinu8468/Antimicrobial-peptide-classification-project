@@ -1,0 +1,79 @@
+========================================================================
+MODEL: logistic_regression
+Training time (s): 1.042
+                    precision    recall  f1-score   support
+
+negative_candidate       0.91      0.89      0.90       567
+               AMP       0.88      0.91      0.89       527
+
+          accuracy                           0.90      1094
+         macro avg       0.90      0.90      0.90      1094
+      weighted avg       0.90      0.90      0.90      1094
+
+Confusion matrix [rows=true 0/1, columns=predicted 0/1]:
+[[505  62]
+ [ 50 477]]
+
+========================================================================
+MODEL: svc_rbf
+Training time (s): 6.588
+                    precision    recall  f1-score   support
+
+negative_candidate       0.91      0.89      0.90       567
+               AMP       0.89      0.90      0.89       527
+
+          accuracy                           0.90      1094
+         macro avg       0.90      0.90      0.90      1094
+      weighted avg       0.90      0.90      0.90      1094
+
+Confusion matrix [rows=true 0/1, columns=predicted 0/1]:
+[[506  61]
+ [ 52 475]]
+
+========================================================================
+MODEL: random_forest
+Training time (s): 0.877
+                    precision    recall  f1-score   support
+
+negative_candidate       0.93      0.89      0.91       567
+               AMP       0.88      0.93      0.91       527
+
+          accuracy                           0.91      1094
+         macro avg       0.91      0.91      0.91      1094
+      weighted avg       0.91      0.91      0.91      1094
+
+Confusion matrix [rows=true 0/1, columns=predicted 0/1]:
+[[503  64]
+ [ 38 489]]
+
+========================================================================
+MODEL: xgboost
+Training time (s): 0.652
+                    precision    recall  f1-score   support
+
+negative_candidate       0.92      0.88      0.90       567
+               AMP       0.88      0.91      0.90       527
+
+          accuracy                           0.90      1094
+         macro avg       0.90      0.90      0.90      1094
+      weighted avg       0.90      0.90      0.90      1094
+
+Confusion matrix [rows=true 0/1, columns=predicted 0/1]:
+[[500  67]
+ [ 45 482]]
+
+========================================================================
+MODEL: soft_voting_ensemble
+Training time (s): 8.626
+                    precision    recall  f1-score   support
+
+negative_candidate       0.92      0.92      0.92       567
+               AMP       0.91      0.92      0.91       527
+
+          accuracy                           0.92      1094
+         macro avg       0.92      0.92      0.92      1094
+      weighted avg       0.92      0.92      0.92      1094
+
+Confusion matrix [rows=true 0/1, columns=predicted 0/1]:
+[[520  47]
+ [ 43 484]]

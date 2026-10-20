@@ -1,0 +1,2 @@
+model,esm_model,seed,n_splits,n_sequences,n_clusters,train_size,test_size,selected_epochs,accuracy,f1,roc_auc,pr_auc_average_precision,mcc,precision,recall_sensitivity,specificity,threshold
+ESM-2 + MLP,facebook/esm2_t6_8M_UR50D,42,5,5446,3692,4357,1089,6,0.9237832874196511,0.9240622140896615,0.9791891527253103,0.9818513151999324,0.8476034679493685,0.9198542805100182,0.9283088235294118,0.9192660550458716,0.5

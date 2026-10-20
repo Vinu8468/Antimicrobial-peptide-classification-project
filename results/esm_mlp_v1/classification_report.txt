@@ -1,0 +1,9 @@
+                    precision    recall  f1-score   support
+
+negative_candidate     0.9278    0.9193    0.9235       545
+               AMP     0.9199    0.9283    0.9241       544
+
+          accuracy                         0.9238      1089
+         macro avg     0.9238    0.9238    0.9238      1089
+      weighted avg     0.9238    0.9238    0.9238      1089
+

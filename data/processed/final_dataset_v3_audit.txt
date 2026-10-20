@@ -1,0 +1,21 @@
+AMP dataset v3 audit
+=====================
+AMP FASTA: /home/ibab/Sem2/Antimicrobial-peptide-classification-project/data/raw/naturalAMPs_APD2024a.fasta
+Negative-candidate FASTA: /home/ibab/Sem2/Antimicrobial-peptide-classification-project/data/raw/peptide_10_50_uniprot_no_toxin_antimicrobial_secreted.fasta
+Length range: 10-50 amino acids
+Allowed residues: ACDEFGHIKLMNPQRSTVWY
+
+AMP input statistics: {'records_read': 3306, 'retained': 2796, 'outside_length_range': 510}
+Negative-candidate input statistics: {'records_read': 7864, 'retained': 7501, 'noncanonical_residue': 363}
+Rows combined after sequence filtering: 10297
+Distinct sequences with conflicting labels removed: 73
+Rows removed because their sequence had conflicting labels: 150
+Unique class counts after deduplication, before balancing: {0: 5143, 1: 2723}
+Balancing applied: True
+Random seed for balancing: 42
+Final unique sequences: 5446
+Final class counts: {0: 2723, 1: 2723}
+Final duplicate sequence rows: 0
+
+Caution: label 0 means a sequence selected from the negative-candidate source file;
+it does not by itself prove experimental absence of antimicrobial activity.

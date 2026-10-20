@@ -1,0 +1,24 @@
+{
+  "dataset": "/home/ibab/Sem2/Antimicrobial-peptide-classification-project/data/processed/final_dataset_v3.csv",
+  "split_note": "StratifiedGroupKFold first fold; CD-HIT identity=0.8; coverage >= 80% of both sequences",
+  "seed": 42,
+  "feature_count": 422,
+  "train_rows": 4352,
+  "test_rows": 1094,
+  "train_class_counts": {
+    "0": 2156,
+    "1": 2196
+  },
+  "test_class_counts": {
+    "0": 567,
+    "1": 527
+  },
+  "cdhit_identity": 0.8,
+  "models": [
+    "logistic_regression",
+    "svc_rbf",
+    "random_forest",
+    "xgboost",
+    "soft_voting_ensemble"
+  ]
+}

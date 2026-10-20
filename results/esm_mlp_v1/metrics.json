@@ -1,0 +1,20 @@
+{
+  "model": "ESM-2 + MLP",
+  "esm_model": "facebook/esm2_t6_8M_UR50D",
+  "seed": 42,
+  "n_splits": 5,
+  "n_sequences": 5446,
+  "n_clusters": 3692,
+  "train_size": 4357,
+  "test_size": 1089,
+  "selected_epochs": 6,
+  "accuracy": 0.9237832874196511,
+  "f1": 0.9240622140896615,
+  "roc_auc": 0.9791891527253103,
+  "pr_auc_average_precision": 0.9818513151999324,
+  "mcc": 0.8476034679493685,
+  "precision": 0.9198542805100182,
+  "recall_sensitivity": 0.9283088235294118,
+  "specificity": 0.9192660550458716,
+  "threshold": 0.5
+}
